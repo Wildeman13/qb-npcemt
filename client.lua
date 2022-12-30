@@ -44,7 +44,7 @@ function SpawnVehicle(x, y, z)
 	while not HasModelLoaded('s_m_m_paramedic_01') do
 		Wait(1)
 	end
-	local spawnRadius = 40                                                    
+	local spawnRadius = 60                                                    
     local found, spawnPos, spawnHeading = GetClosestVehicleNodeWithHeading(loc.x + math.random(-spawnRadius, spawnRadius), loc.y + math.random(-spawnRadius, spawnRadius), loc.z, 0, 3, 0)
 
 	if not DoesEntityExist(vehhash) then
@@ -82,7 +82,7 @@ Citizen.CreateThread(function()
 			local dist1 = Vdist(loc.x, loc.y, loc.z, ld.x, ld.y, ld.z)
             if dist <= 10 then
 				if Active then
-					TaskGoToCoordAnyMeans(test1, loc.x, loc.y, loc.z, 1.0, 0, 0, 786603, 0xbf800000)
+					TaskGoToCoordAnyMeans(test1, loc.x, loc.y, loc.z, 2.0, 0, 0, 786603, 0xbf800000)
 				end
 				if dist1 <= 1 then 
 					Active = false
@@ -108,19 +108,28 @@ function DoctorNPC()
 		disableMouse = false,
 		disableCombat = true,
 	}, {}, {}, {}, function() -- Done
-		ClearPedTasks(test1)
 		Citizen.Wait(500)
         	TriggerEvent("hospital:client:Revive")
 		StopScreenEffect('DeathFailOut')	
 		Notify("Your Treatment Is Complete. You Were Charged: "..Config.Price, "success")
+		TaskEnterVehicle(test1, test, 20000, -1, 1.0, 0, any)
+		ClearPedTasks(test1)
 		RemovePedElegantly(test1)
 		DeleteEntity(test)
-		Wait(20000)
-		DeleteEntity(test1)				 
+		Wait(2000)
+		DeleteEntity(test1)
 		spam = true
+--		LeaveScene()
 	end)
 end
 
+--function LeaveScene()
+--	TaskVehicleDriveToCoord(test1, test, lc.x, lc.y, lc.z, 2.0, 0, GetEntityModel(test), 524863, 2.0)
+--	RemovePedElegantly(test1)
+--	DeleteEntity(test)
+--	Wait(2000)
+--	DeleteEntity(test1)
+--end
 
 function Notify(msg, state)
     QBCore.Functions.Notify(msg, state)
