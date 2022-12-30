@@ -2,11 +2,9 @@
 NPC EMT
 
 # Description :
-
 This script is my version of the one written by hhfw1 under the name hh_aidoc / QB version. This script is intended for use on a server when there are no EMS or Medical Staff available as well as when they are solo and no one is around the carry them to a hospital. Instead of players having to wait for death timers in order to respawn at the Hospital (and depending on server code, lose all items in their pockets), the players will get an option to pay for NPC EMTs to come to the player and revive them on the spot. The NPC/AI is fairly smart and will drive using the standard GTA pathing to reach you almost anywhere. The NPC EMT will, however, follow all traffic laws doing so. Which means waiting at any nearby red lights they may encounter. 
 
 # Features :
-
 - This script is highly customizable to better meet your servers needs. 
 	- Set the minimum number of Medical staff needed for this script to go dormant, zero is allowed such that this script is always available regardless of staffing. 
 	- Set the cost per Revive/Service and wether it can come out of Cash/Bank account or other
@@ -14,6 +12,15 @@ This script is my version of the one written by hhfw1 under the name hh_aidoc / 
 	- Change the appearance of the NPC EMT and Ambulance
 	
 - Feel free to do whatever you like with this script just don't edit and resell. Any use or modifications of this version must include the original creators name and link as well as mine.  
+
+# Version
+0.1.2 - EMS Ped will now drive slightly faster to scene and run to downed Player. 
+    Added code chunk to have EMS Ped return to Ambulance before despawn. 
+    Initial first pass at having EMT Ped drive away short distance before despawn - WIP function commented out 
+
+0.1.1 - Original modifications by GreaseMonkeyGeek changing Doctor/Ped to EMS/Ped and changing basic quality of life
+
+
 
 Modified by GreaseMonkeyGeek 2022/11/20
 

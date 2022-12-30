@@ -3,8 +3,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'NPC EMT for [QB Framework]'
-
-version '0.1.1'
+version '0.1.2'
 
 
 client_scripts {
