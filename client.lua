@@ -114,9 +114,7 @@ function DoctorNPC()
 		StopScreenEffect('DeathFailOut')	
 		Notify("Your Treatment Is Complete. You Were Charged: "..Config.Price, "success")
 		RemovePedElegantly(test1)
-		DeleteEntity(test)
-		Wait(20000)
-		DeleteEntity(test1)				 
+		TaskEnterVehicle(ped: (test1), vehicle: (test), timeout: 20000, seatIndex: 1, speed: 1.0, flag: 1, p6: any);
 		spam = true
 	end)
 end
