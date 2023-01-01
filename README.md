@@ -14,6 +14,9 @@ This script is my version of the one written by hhfw1 under the name hh_aidoc / 
 - Feel free to do whatever you like with this script just don't edit and resell. Any use or modifications of this version must include the original creators name and link as well as mine.  
 
 # Version
+0.1.3 - EMT Ped will now use lights and sirens to get to Player and only charge REVIVE Fee after successful REVIVE.
+        EMT Ped will turn off siren and drive away allowing server to remove it when appropriate
+
 0.1.2 - EMS Ped will now drive slightly faster to scene and run to downed Player. 
     Added code chunk to have EMS Ped return to Ambulance before despawn. 
     Initial first pass at having EMT Ped drive away short distance before despawn - WIP function commented out 
